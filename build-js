@@ -2,7 +2,7 @@
 
 mkdir -p dist
 docker build --no-cache -t docker-libwally:latest .   
-docker run --name linux-build docker-libwally:latest "./tools/autogen.sh && ./configure --enable-debug --enable-js-wrappers --enable-elements && make"
+docker run --name linux-build docker-libwally:latest /bin/bash -c "./tools/autogen.sh && ./configure --enable-debug --enable-js-wrappers --enable-elements && make" 
 docker cp linux-build:/libwally-core/src/wrap_js/wally.js ./dist/wally.js
 docker rm linux-build
 docker rmi docker-libwally:latest
