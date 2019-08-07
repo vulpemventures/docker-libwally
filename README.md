@@ -9,23 +9,12 @@ Dockerfile of the public image [vulpemventures/libwally](https://hub.docker.com/
 $ docker pull vulpemventures/libwally
 ```
 
-* Run the container in interactive mode
+* Build the image and export in local `/dist` folder `wally.js` wrapper
 
 ```bash
-$ docker run --rm -it docker-libwally:latest  
+$ git clone https://github.com/vulpemventures/docker-libwally && cd docker-libwally
+$ bash build-js
 ```
-
-* Compile libwally
-
-```bash
-$ ./tools/autogen.sh
-$ ./configure <options>
-$ make
-$ make check
-```
-
-You can check options [here](https://github.com/ElementsProject/libwally-core#configure-options)
-
-
+  
 
 
